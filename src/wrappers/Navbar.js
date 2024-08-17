@@ -6,6 +6,11 @@ export const Wrapper = styled.nav`
   grid-template-columns: auto 1fr auto;
   gap: 1rem;
   align-items: center;
+  .new-document-btn {
+    /* width: 40px;
+    height: 40px;
+    font-size: 1.5rem; */
+  }
   .sidebar-toggle-btn {
     background: var(--gray-700);
     border: none;

@@ -141,17 +141,23 @@ VARIABLES
 
   --preview-heading-color: var(--gray-100);
   --preview-paragraph-color: var(--gray-500);
-  --markdown-color: var(--gray-400);
+  --markdown-color: var(--gray-700);
   --main-bg-color: var(--gray-100);
+  --modal-bg-color: var(--gray-100);
   --block-quote-bg-color: var(--gray-200);
+  --editor-type-bg-color: var(--gray-200);
   --inline-snippets-color: var(--gray-700);
+  --hr-bg-color: var(--gray-300);
 
   --dark-preview-heading-color: var(--gray-700);
   --dark-preview-paragraph-color: var(--gray-400);
-  --dark-markdown-color: var(--gray-700);
+  --dark-markdown-color: var(--gray-400);
   --dark-main-bg-color: var(--gray-1000);
+  --dark-modal-bg-color: var(--gray-900);
   --dark-block-quote-bg-color: var(--gray-800);
+  --dark-editor-type-bg-color: var(--gray-900);
   --dark-inline-snippets-color: var(--gray-100);
+  --dark-hr-bg-color: var(--gray-600);
 
   --transition: all 0.3s linear;
 }
@@ -161,10 +167,14 @@ VARIABLES
   --preview-paragraph-color: var(--dark-preview-paragraph-color);
   --markdown-color: var(--dark-markdown-color);
   --main-bg-color: var(--dark-main-bg-color);
+  --modal-bg-color: var(--dark-modal-bg-color);
   --block-quote-bg-color: var(--dark-block-quote-bg-color);
   --inline-snippets-color: var(--dark-inline-snippets-color);
+  --editor-type-bg-color: var(--dark-editor-type-bg-color);
+  --hr-bg-color: var(--dark-hr-bg-color);
 }
 main {
+  position: relative;
   display: flex;
   min-height: 100vh;
 }
@@ -215,6 +225,7 @@ p {
   font-weight: 400;
   font-style: normal;
   font-size: 15px;
+  color: var(--gray-100);
 }
 .in-app-heading-small {
   font-family: "Roboto", sans-serif;
@@ -222,12 +233,14 @@ p {
   font-style: normal;
   font-size: 14px;
   letter-spacing: 2px;
+  color: var(--gray-100);
 }
 .in-app-body-small {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
   font-style: normal;
   font-size: 13px;
+  color: var(--gray-100);
 }
 
 .btn {
