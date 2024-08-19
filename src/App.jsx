@@ -5,8 +5,6 @@ import { months } from "./utils/months";
 
 const getThemeFromLocalStorage = () => {
   const theme = localStorage.getItem("theme") || false;
-  console.log(localStorage.getItem("theme"), theme);
-
   return theme;
 };
 const getFilesFromLocalStorage = () => {
@@ -42,7 +40,15 @@ function App() {
     };
     setFiles([...files, file]);
   };
-  const updateFile = () => {};
+  const updateFile = () => {
+    const newFiles = files.map((file) => {
+      if (file.id === currentFile.id) {
+        return currentFile;
+      }
+      return file;
+    });
+    setFiles(newFiles);
+  };
   useEffect(() => {
     localStorage.setItem("theme", darkTheme);
     document.querySelector("main").classList.toggle("dark-theme", darkTheme);

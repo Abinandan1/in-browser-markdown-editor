@@ -81,8 +81,8 @@ FONTS
 
 /* ROBOTO SLAB */
 .roboto-slab-regular {
-  font-family: "Roboto Slab", serif;
   font-optical-sizing: auto;
+  font-family: "Roboto Slab", serif;
   font-weight: 400;
   font-style: normal;
 }
@@ -139,7 +139,7 @@ VARIABLES
   --orange-100: rgb(243, 151, 101);
   --orange-200: rgb(228, 102, 67);
 
-  --preview-heading-color: var(--gray-100);
+  --preview-heading-color: var(--gray-700);
   --preview-paragraph-color: var(--gray-500);
   --markdown-color: var(--gray-700);
   --main-bg-color: var(--gray-100);
@@ -149,7 +149,7 @@ VARIABLES
   --inline-snippets-color: var(--gray-700);
   --hr-bg-color: var(--gray-300);
 
-  --dark-preview-heading-color: var(--gray-700);
+  --dark-preview-heading-color: var(--gray-100);
   --dark-preview-paragraph-color: var(--gray-400);
   --dark-markdown-color: var(--gray-400);
   --dark-main-bg-color: var(--gray-1000);
@@ -191,6 +191,7 @@ h5 {
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
+  margin-bottom: 1rem;
 }
 h1 {
   font-size: 32px;
@@ -209,11 +210,16 @@ h5 {
   font-size: 16px;
 }
 h6 {
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
   font-size: 14px;
   color: var(--orange-200);
+  margin-bottom: 1rem;
 }
 p {
-  color: var(--gray-700);
+  color: var(--preview-paragraph-color);
   font-size: 14px;
   line-height: 24px;
 }

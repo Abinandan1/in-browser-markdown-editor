@@ -4,7 +4,7 @@ import Markdown from "./Markdown";
 import Preview from "./Preview";
 
 const TextEditor = () => {
-  const { showPreview, setShowPreview, currentFile } = useAppContext();
+  const { showPreview, currentFile } = useAppContext();
   return (
     <Wrapper showpreview={showPreview ? "true" : "false"}>
       {currentFile && (

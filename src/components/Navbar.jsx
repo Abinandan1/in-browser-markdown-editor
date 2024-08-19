@@ -14,6 +14,7 @@ const Navbar = () => {
     showModal,
     setShowModal,
     deleteFile,
+    updateFile,
   } = useAppContext();
   return (
     <Wrapper>
@@ -58,7 +59,7 @@ const Navbar = () => {
                 />
               </svg>
             </button>
-            <button className="save-btn btn">
+            <button onClick={updateFile} className="save-btn btn">
               <img src={iconSave} alt="" /> <span>Save Changes</span>
             </button>
           </>

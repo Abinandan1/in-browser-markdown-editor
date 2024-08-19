@@ -10,7 +10,7 @@ export const Wrapper = styled.section`
     display: grid;
     grid-template-rows: repeat(4, auto) 1fr;
     gap: 1.5rem;
-    height: 100%;
+    height: 100vh;
     align-items: center;
     align-content: start;
   }

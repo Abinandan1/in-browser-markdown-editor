@@ -1,16 +1,27 @@
-import { useEffect } from "react";
+import { useRef } from "react";
 import { useAppContext } from "../App";
 import { Wrapper } from "../wrappers/Markdown";
 import EditorType from "./EditorType";
 const Markdown = () => {
-  const { currentFile } = useAppContext();
-  const content = { __html: currentFile?.content };
+  const content = useRef("");
+  const { currentFile, setCurrentFile } = useAppContext();
+  console.log(currentFile.content);
+
+  // useEffect(() => {
+  //   content.current.defaultValue = currentFile.content;
+  // }, [currentFile]);
   return (
     <Wrapper className="markdown">
       <EditorType name="MARKDOWN" />
-      <p contentEditable={true} className="content roboto-mono-regular">
-        {currentFile?.content}
-      </p>
+      <textarea
+        value={currentFile.content}
+        className="content roboto-mono-regular"
+        ref={content}
+        onInput={(e) =>
+          setCurrentFile({ ...currentFile, content: content.current.value })
+        }
+        rows={38}
+      />
     </Wrapper>
   );
 };
