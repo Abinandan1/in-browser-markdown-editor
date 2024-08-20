@@ -6,16 +6,8 @@ import iconDocument from "/assets/icon-document.svg";
 import iconSave from "/assets/icon-save.svg";
 import { useAppContext } from "../App";
 const Navbar = () => {
-  const {
-    showSidebar,
-    setShowSidebar,
-    currentFile,
-    setCurrentFile,
-    showModal,
-    setShowModal,
-    deleteFile,
-    updateFile,
-  } = useAppContext();
+  const { showSidebar, setShowSidebar, currentFile, setShowModal, updateFile } =
+    useAppContext();
   return (
     <Wrapper>
       <button

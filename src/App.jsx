@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { Modal, Navbar, Sidebar, TextEditor } from "./components";
 import { nanoid } from "nanoid";
 import { months } from "./utils/months";
+import { toast } from "./components/Notification";
 
 const getThemeFromLocalStorage = () => {
   const theme = localStorage.getItem("theme") || false;
@@ -16,7 +17,7 @@ function App() {
   const [showSidebar, setShowSidebar] = useState(false);
   const [darkTheme, setDarkTheme] = useState(getThemeFromLocalStorage());
   const [files, setFiles] = useState(getFilesFromLocalStorage());
-  const [currentFile, setCurrentFile] = useState(files[0]);
+  const [currentFile, setCurrentFile] = useState(null);
   const [showPreview, setShowPreview] = useState(false);
   const [showModal, setShowModal] = useState({ open: false, type: "add" });
   const deleteFile = () => {
@@ -47,14 +48,17 @@ function App() {
       }
       return file;
     });
+    toast.success("Saved successfully");
     setFiles(newFiles);
   };
   useEffect(() => {
     localStorage.setItem("theme", darkTheme);
     document.querySelector("main").classList.toggle("dark-theme", darkTheme);
+    document
+      .querySelector(".notification")
+      .classList.toggle("dark-theme", darkTheme);
   }, [darkTheme]);
   useEffect(() => {
-    setCurrentFile(files[0]);
     localStorage.setItem("files", JSON.stringify(files));
   }, [files]);
   return (

@@ -5,16 +5,11 @@ import EditorType from "./EditorType";
 const Markdown = () => {
   const content = useRef("");
   const { currentFile, setCurrentFile } = useAppContext();
-  console.log(currentFile.content);
-
-  // useEffect(() => {
-  //   content.current.defaultValue = currentFile.content;
-  // }, [currentFile]);
   return (
     <Wrapper className="markdown">
       <EditorType name="MARKDOWN" />
       <textarea
-        value={currentFile.content}
+        value={currentFile?.content}
         className="content roboto-mono-regular"
         ref={content}
         onInput={(e) =>

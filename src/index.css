@@ -148,6 +148,7 @@ VARIABLES
   --editor-type-bg-color: var(--gray-200);
   --inline-snippets-color: var(--gray-700);
   --hr-bg-color: var(--gray-300);
+  --shadow-color: 21, 22, 25;
 
   --dark-preview-heading-color: var(--gray-100);
   --dark-preview-paragraph-color: var(--gray-400);
@@ -158,6 +159,7 @@ VARIABLES
   --dark-editor-type-bg-color: var(--gray-900);
   --dark-inline-snippets-color: var(--gray-100);
   --dark-hr-bg-color: var(--gray-600);
+  --dark-shadow-color: 255, 255, 255;
 
   --transition: all 0.3s linear;
 }
@@ -172,6 +174,7 @@ VARIABLES
   --inline-snippets-color: var(--dark-inline-snippets-color);
   --editor-type-bg-color: var(--dark-editor-type-bg-color);
   --hr-bg-color: var(--dark-hr-bg-color);
+  --shadow-color: var(--dark-shadow-color);
 }
 main {
   position: relative;
@@ -268,4 +271,29 @@ p {
 }
 .btn:hover {
   background: var(--orange-100);
+}
+.notification {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  background: var(--main-bg-color);
+  border-radius: 0.25rem;
+  margin-top: -4rem;
+  transition: var(--transition);
+  padding: 1rem;
+  border-left: 8px solid black;
+  box-shadow: 2px 2px 10px rgba(var(--shadow-color), 0.5);
+}
+.show-success-notification {
+  margin-top: 2rem;
+  border-color: green;
+}
+.show-error-notification {
+  margin-top: 2rem;
+  border-color: red;
 }

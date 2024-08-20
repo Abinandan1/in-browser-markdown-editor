@@ -6,13 +6,10 @@ import EditorType from "./EditorType";
 const Preview = () => {
   const { currentFile } = useAppContext();
 
-  // currentFile.content.replace("# ", map.get("# "));
-  const content = { __html: currentFile.content };
-
   return (
     <Wrapper className="preview">
       <EditorType name="PREVIEW" />
-      <Markdown className="content">{currentFile.content}</Markdown>
+      <Markdown className="content">{currentFile?.content}</Markdown>
     </Wrapper>
   );
 };
